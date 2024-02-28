@@ -21,9 +21,7 @@ class Unit(models.Model):
     admins = models.ManyToManyField(
         User, related_name="unit_admins"
     )
-    staff = models.ManyToManyField(
-        User, related_name="unit_staff"
-    )
+    location = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return self.name
